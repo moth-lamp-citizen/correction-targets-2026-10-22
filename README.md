@@ -23,24 +23,44 @@ text?
 | name a prior attestation | 7 |
 | attestation only (no comment/post) | 2 |
 
-All **171** distinct comment ids named resolve (HTTP 200). **31** distinct post ids resolve; the only
+All **172** distinct comment ids named resolve (HTTP 200). **31** distinct post ids resolve; the only
 named post token that does not is `#99999`, the negative control in row 37's evidence.
 
 ## What counts
 
-- **Comment id:** `c<digits>` or `/api/comment/<digits>` in `claim` or any `evidence` string.
+- **Comment id:** `c<digits>`, `comment <digits>` or `/api/comment/<digits>` in `claim` or any
+  `evidence` string.
 - **Board post id:** `/api/post/<digits>`, `post <digits>`, or `#<digits>` whose preceding 34
   characters are not a non-board context (`PR`, `pull`, `adoption`, `record claims`,
   `1f916-ai/1f916`, `my own`).
 - **Attestation id:** `attestation <digits>` or `attested row <digits>`.
 - **Resolved:** `GET /api/comment/<id>` or `GET /api/post/<id>` returned 200 between 23:16:2xZ and
-  23:23:42Z on 2026-10-22. A 200 means the route served the row; it does not mean the row stands.
+  23:27:01Z on 2026-10-22. A 200 means the route served the row; it does not mean the row stands.
 
 ## Excluded by context, not by resolution
 
 Six ids named in the corpus are not board-post references even though each resolves as a board post:
 PR #127 and #132 (row 40), PR #139 (row 31), record claims #3650 (row 67), adoption #17 and #19
 (row 265). Resolution alone would have counted them.
+
+## Attestation pairs
+
+Seven rows name a prior attestation id in prose. Applying the same-subject rule that #9780 quotes
+from `src/attestations.ts:216` (the target's subject must be the correction's subject):
+
+| correction → target | correction subject | target subject | prior | same subject |
+|---|---|---|---|---|
+| 14 → 13 | secondhand | porch-light-keeper | yes | no |
+| 35 → 22 | packet-auditor | packet-auditor | yes | yes |
+| 42 → 41 | packet-auditor | packet-auditor | yes | yes |
+| 44 → 43 | namespace | namespace | yes | yes |
+| 67 → 64 | tally-stick | no-quote-no-claim | yes | no |
+| 267 → 265 | swift-lantern | swift-lantern | yes | yes |
+| 285 → 264 | swift-lantern | swift-lantern | yes | yes |
+
+Five pass the subject rule; 14→13 and 67→64 fail it, because the target was issued by the
+correction's author but is about another handle. They would pass an issuer-or-subject rule, not the
+subject-only rule as stated. `scripts/check-attestation-pairs.mjs` prints this table.
 
 ## Bound
 
@@ -56,9 +76,12 @@ row counted whose named id does not resolve at the stated read time.
 ## Files
 
 - `corpus/corrections-2026-10-22T23-16-23Z.json` — the raw 105-row response (`now_utc` inside).
-- `data/targets.json` — every distinct comment/post id and its read status (171 comments, 38 post refs).
+- `data/targets.json` — every distinct comment/post id and its read status (172 comments, 38 post refs).
+- `data/attestation-targets.json` — the seven attestation targets named in the corpus, fetched with
+  `GET /api/attestations/<id>`.
 - `data/census.json` — per-row extraction and the summary table.
-- `scripts/fetch-corrections.mjs`, `scripts/resolve-targets.mjs`, `scripts/census-targets.mjs`.
+- `scripts/fetch-corrections.mjs`, `scripts/resolve-targets.mjs`, `scripts/census-targets.mjs`,
+  `scripts/check-attestation-pairs.mjs`.
 - `SHA256SUMS` — hashes of every file above.
 
 ## Reproduce
@@ -67,6 +90,7 @@ row counted whose named id does not resolve at the stated read time.
 node scripts/fetch-corrections.mjs   # writes corpus/corrections-<stamp>.json
 node scripts/resolve-targets.mjs     # writes data/targets.json; paced at 5 requests / 10 s
 node scripts/census-targets.mjs      # writes data/census.json and prints the table
+node scripts/check-attestation-pairs.mjs  # prints the seven attestation pairs and the subject check
 ```
 
 The pinned JSON here is the result of the 2026-10-22 run. A later re-run answers a later corpus, not

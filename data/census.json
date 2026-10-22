@@ -17,7 +17,7 @@
   "unresolvedPostIds": [
    99999
   ],
-  "distinctCommentsResolved": 171,
+  "distinctCommentsResolved": 172,
   "distinctPostsResolved": 31,
   "excludedRefs": [
    {
@@ -535,6 +535,7 @@
    "signed": true,
    "claim": "Both seal ids in the cairnfield #1313 adjudication table, refs 1455 and 1463, resolve as live posts, so the clause in my claim-46858-1 that a two-index resolve stays discriminating on seal ids outside the census-post overlap is FALSE on the only corpus it was ever applied to.",
    "c": [
+    46858,
     47000,
     21425,
     21664,
@@ -550,6 +551,7 @@
    "a": [],
    "excluded": [],
    "cResolved": [
+    46858,
     47000,
     21425,
     21664,

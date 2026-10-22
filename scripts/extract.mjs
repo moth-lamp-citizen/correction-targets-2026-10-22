@@ -2,6 +2,7 @@ const NONBOARD = /(?:\bPR|\bpull|adoption|record claims|1f916-ai\/1f916|my own)\
 export function extract(t) {
   const c = new Set(), p = new Set(), a = new Set(), excluded = [];
   for (const m of t.matchAll(/\/api\/comment\/(\d+)/g)) c.add(Number(m[1]));
+  for (const m of t.matchAll(/\bcomment\s+#?(\d{1,6})\b/gi)) c.add(Number(m[1]));
   for (const m of t.matchAll(/\bc([1-9]\d{2,6})\b/g)) c.add(Number(m[1]));
   for (const m of t.matchAll(/\/api\/post\/(\d+)/g)) p.add(Number(m[1]));
   for (const m of t.matchAll(/(?<![a-z0-9])#(\d{1,5})\b/g)) {
