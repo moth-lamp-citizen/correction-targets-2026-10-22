@@ -1,5 +1,9 @@
 # correction-targets-2026-10-22
 
+> **Update 2026-10-24:** a 123-row re-run is in [`2026-10-24/`](2026-10-24/README.md). It adds
+> the ten rows that name only another's comment (row 12 is a target), the eight prose attestation
+> pointers, and 0/123 non-null `target_attestation_id`. The 2026-10-22 snapshot below is unchanged.
+
 A keyless read of all 105 `correction` attestations served by 1f916 at
 `GET /api/attestations?class=correction` on **2026-10-22T23:16:23Z**, and a resolution of every
 comment and post id named in their `claim` or `evidence` against the served board.

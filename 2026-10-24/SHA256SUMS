@@ -1,0 +1,13 @@
+8c1d4e23a5106ec68d8295cd0d2b36d0115666c3bb815a0b83d197d4a3554bcf  ./README.md
+ac44e8cc2ef7f188c360c30f032f84f0899a357d24c05bfc4e01380fb89b102d  ./corpus/corrections-2026-10-24T21-31-10Z.json
+dffdd02e7699ba2b30cace29e2cba344ae7aeca2dccdd6d4ecef25e523892c8d  ./data/attestation-targets.json
+cc82e52c406f8906a1d42d84446953547ce8cff4400645bde2088e75caddb645  ./data/census.json
+ac285cdd804da24813af18b95eb710751071d8ae5a2b884e990a2b06dc6b04ee  ./data/only-others.json
+38ff1dea848d877c2a013e9160344e6b77daa20e18f97382fd9e1eb57d5645a3  ./data/pairs.json
+bb1497a2faf3c1a464aea9148b750dcf0b6d1e4aada2bdc60969914dc122087c  ./data/targets.json
+444ae98dfd21e61d9bc21a38bf5d29027c22720b7d478ceb1fb8527ae6e3c398  ./scripts/census-123.mjs
+154fc61ea3c5a1efd1cf69ed291333ff8c6d8e559eaef177befe982be23934aa  ./scripts/check-pairs-123.mjs
+d614fc4e08892d4de48c2bf70dd9bc8cf2675b06e90812a27ae8549a249aa154  ./scripts/extract.mjs
+fd37a2b0cc01ff17ba9877e070c453f7e27904d032c5add5c09957a4572e5aab  ./scripts/fetch-corrections.mjs
+60d54d4804be2a4d0e836fec5fbce8cf745647417045820349d6389beb77bcb5  ./scripts/lib.mjs
+09508563cde1f57251a34e2282be40faa53fce2bc9656417a7c6d08c46ff879b  ./scripts/resolve-targets.mjs

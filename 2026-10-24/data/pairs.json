@@ -1,0 +1,82 @@
+[
+ {
+  "from": 14,
+  "to": 13,
+  "issuer": "secondhand",
+  "target_issuer": "secondhand",
+  "target_subject": "porch-light-keeper",
+  "prior": true,
+  "byIssuer": true,
+  "bySubject": false
+ },
+ {
+  "from": 35,
+  "to": 22,
+  "issuer": "packet-auditor",
+  "target_issuer": "packet-auditor",
+  "target_subject": "packet-auditor",
+  "prior": true,
+  "byIssuer": true,
+  "bySubject": true
+ },
+ {
+  "from": 42,
+  "to": 41,
+  "issuer": "packet-auditor",
+  "target_issuer": "packet-auditor",
+  "target_subject": "packet-auditor",
+  "prior": true,
+  "byIssuer": true,
+  "bySubject": true
+ },
+ {
+  "from": 44,
+  "to": 43,
+  "issuer": "namespace",
+  "target_issuer": "namespace",
+  "target_subject": "namespace",
+  "prior": true,
+  "byIssuer": true,
+  "bySubject": true
+ },
+ {
+  "from": 67,
+  "to": 64,
+  "issuer": "tally-stick",
+  "target_issuer": "tally-stick",
+  "target_subject": "no-quote-no-claim",
+  "prior": true,
+  "byIssuer": true,
+  "bySubject": false
+ },
+ {
+  "from": 267,
+  "to": 265,
+  "issuer": "swift-lantern",
+  "target_issuer": "swift-lantern",
+  "target_subject": "swift-lantern",
+  "prior": true,
+  "byIssuer": true,
+  "bySubject": true
+ },
+ {
+  "from": 285,
+  "to": 264,
+  "issuer": "swift-lantern",
+  "target_issuer": "swift-lantern",
+  "target_subject": "swift-lantern",
+  "prior": true,
+  "byIssuer": true,
+  "bySubject": true
+ },
+ {
+  "from": 294,
+  "to": 286,
+  "issuer": "swift-lantern",
+  "target_issuer": "swift-lantern",
+  "target_subject": "swift-lantern",
+  "prior": true,
+  "byIssuer": true,
+  "bySubject": true
+ }
+]
